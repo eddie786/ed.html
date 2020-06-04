@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <title>
+             PL/SQL   
+        </title>
+        <style type="text/css">
+.a{
+
+  background-color: silver;	
+  width: 700px;
+  border: 8px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+
+
+        </style>
+    </head>
+
+    <body style="background:url(https://image.freepik.com/free-vector/orange-abstract-background-with-lines_1123-45.jpg)">
+        <p> 
+		<h3>
+			<font size="+2">
+		We will discuss the Basic Syntax of PL/SQL which is a block-structured language; this means that the PL/SQL programs are divided and written in logical blocks of code. Each block consists of three sub-parts -
+			</font>
+		</h3>
+	</p>
+	<div class="a"><font size="+2">
+ 		<tr>
+    			<td>
+				<b>Declarations:</b>
+			</td>
+ 		</tr>
+  		<br>
+  		<tr>
+    			<td>
+				This section starts with the keyword DECLARE. It is an optional section and defines all variables, cursors, subprograms, and other elements to be used in the program.
+			</td>
+  		</tr>
+ 		<hr style="width:95%;text-align:left;margin-left:0">
+  		<tr>
+    			<td>
+				<b>Executable Commands:</b>
+			</td>
+  		</tr>
+  		<br>
+  		<tr>
+    			<td>
+				This section is enclosed between the keywords BEGIN and END and it is a mandatory section. It consists of the executable PL/SQL statements of the program. It should have at least one executable line of code, which may be just a NULL command to indicate that nothing should be executed.
+			</td>
+  		</tr>
+  		<hr style="width:95%;text-align:left;margin-left:0">
+  		<tr>
+    			<td>
+				<b>Exception Handling:</b>
+			</td>
+  		</tr>
+  		<br>
+  		<tr>
+  			<td>
+				This section starts with the keyword <i><b>EXCEPTION</b></i>. This optional section contains <i><b>exception(s)</b></i> that handle errors in the program.
+			</td>
+  </tr>
+	
+ 
+</font>
+</div>
+	<p>
+		<h3>
+			<font size="+2">
+		Every PL/SQL statement ends with a semicolon (;). PL/SQL blocks can be nested within other PL/SQL blocks using <b>BEGIN</b> and <b>END</b>. Following is the basic structure of a PL/SQL block -
+			</font>
+		</h3>
+	</p>
+	<div class="a">
+<font size="+2">
+		<tr>
+			<td>
+				<b>DECLARE</b>
+			</td>
+		</tr>
+		<br>
+		<tr>
+			<td>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60; declarations section &#62; 
+			</td>
+		</tr>
+		<br>
+		<tr>
+			<td>
+				<b>BEGIN</b>
+			</td>
+		</tr>
+		<br>
+		<tr>
+			<td>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60; executable command(s) &#62;
+			</td>
+		</tr>
+		<br>
+		<tr>
+			<td>
+				<b>EXCEPTION</b> 
+			</td>
+		</tr>
+		<br>
+		<tr>
+			<td>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#60; exception handling &#62;
+				<br>
+				END;
+			</td>
+		</tr>
+</font>
+	</div>
+	<h1>
+		The 'Hello World' Example
+	</h1>
+	<div class="a">
+		<font size="+2">
+		<tr>
+			<td>
+				DECLARE 
+				<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message  &nbsp;&nbsp;varchar2(20):= 'Hello, World!';
+ 
+BEGIN
+				<br> 
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dbms_output.put_line(message); 
+				<br>
+END;
+				<br> 
+/ 
+			</td>
+		</tr>
+</font>
+	</div>
+	<tr>
+		<td>
+			<h3>
+				<font size="+2">
+The <i>end;</i> line signals the end of the PL/SQL block. To run the code from the SQL command line, you may need to type / at the beginning of the first blank line after the last line of the code. When the above code is executed at the SQL prompt, it produces the following result -
+				</font>
+			</h3>
+		</td>
+	</tr>
+	<div class="a">
+		<font size="+2">
+		<tr>
+			<td>
+			Hello World  
+				<br>
+				<br>
+				<br>
+
+PL/SQL procedure successfully completed.
+			</td>
+		</tr>
+		</font>
+	</div>
+		<h1>The PL/SQL Identifiers</h1>
+		<p>
+			<font size="+2">PL/SQL identifiers are constants, variables, exceptions, procedures, cursors, and reserved words. The identifiers consist of a letter optionally followed by more letters, numerals, dollar signs, underscores, and number signs and should not exceed 30 characters.
+			</font>	
+	</p>
+		<p>
+			<font size="+2">	By default, <b>identifiers are not case-sensitive</b>. So you can use <b>integer</b> or <b>INTEGER</b> to represent a numeric value. You cannot use a reserved keyword as an identifier.
+			</font>
+		</p>
+		<h1>
+			The PL/SQL Delimiters
+		</h1>
+		<tr>
+			<td>
+			<font size="+2">
+				A delimiter is a symbol with a special meaning. Following is the list of delimiters in PL/SQL -
+				</font>
+			</td>
+		</tr>
+		<div class="a">
+			<tr>
+				<td>
+					<font size="+2"><b>Delimiter</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                         &nbsp;&nbsp;&nbsp;<b>Description</b></font>
+				</td>
+			</tr>
+			<br>
+			<br>
+			<tr>
+				<td>
+					<font size="+2">+,-,*,/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add,Sub,Multiplication,Div
+<br>
+%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Attribute Indicator
+<br>
+'	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Character string delimiter
+<br>
+.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Component selector
+<br>
+(,)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Expression or list delimiter
+<br>
+:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Host variable indicator
+<br>	
+,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Item separator
+<br>	
+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Quoted identifier delimiter
+<br>	
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Relational operator
+<br>
+@&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Remote access indicator
+<br>	
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		Statement terminator
+<br>
+:=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assignment operator
+<br>
+=>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Association operator
+<br>	
+||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Concatenation operator
+<br>	
+**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exponentiation operator
+<br>
+<<, >>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Label delimiter (begin and end)
+<br>	
+/*, */&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Multi-line comment delimiter (begin and end)
+<br>
+--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Single-line comment indicator
+<br>	
+..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Range operator
+<br>	
+<, >, <=, >=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Relational operators
+<br>	
+<>, '=, ~=, ^=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Different versions of NOT EQUAL
+
+</font>
+
+
+				</td>
+			</tr>
+			
+		</div>
+		<h1>The PL/SQL Comments</h1>
+		<tr>
+			<td>
+				<font size="+2">
+				Program comments are explanatory statements that can be included in the PL/SQL code that you write and helps anyone reading its source code. All programming languages allow some form of comments.
+				<br>
+
+The PL/SQL supports single-line and multi-line comments. All characters available inside any comment are ignored by the PL/SQL compiler. The PL/SQL single-line comments start with the delimiter -- (double hyphen) and multi-line comments are enclosed by /* and */.
+				</font>
+			</td>
+		</tr>
+		<div class="a">
+<font size="+2">
+			<tr>
+				<td>
+					DECLARE <br>
+   -- variable declaration <br>
+   message  varchar2(20):= 'Hello, World!';<br> 
+BEGIN <br>
+   /* <br>
+   *  PL/SQL executable statement(s)<br> 
+   */ <br>
+   dbms_output.put_line(message);<br> 
+END; <br>
+/
+				</td>
+			</tr>
+</font>
+		</div>
+		<h3>
+			<font size="+2">
+When the above code is executed at the SQL prompt, it produces the following result -
+		        </font>
+		</h3>
+		<div class="a">
+<font size="+2">
+			<tr>
+				<td>
+					Hello World
+					<br>
+					<br>
+					PL/SQL procedure successfully completed
+				</td>
+			</tr>
+</font>		
+</div>
+		<h1>PL/SQL Program Units</h1>
+		<tr>
+			
+			<font size="+2">
+
+			<td>A PL/SQL unit is any one of the following -</td>
+			</font>
+<br>
+<br>
+		</tr>
+		<td>
+			<tr>
+				<font size="+2"> 
+* PL/SQL block
+<br>
+<br>
+* Function
+<br>
+<br>
+* Package
+<br>
+<br>
+* Package body
+<br>
+<br>
+* Procedure
+<br>
+<br>
+* Trigger
+<br>
+<br>
+* Type
+<br>
+<br>
+* Type body
+				</font>
+			</tr>
+		</td>
+<h1>Stored Procedures</h1>
+		<h2>What is a Stored Procedure?</h2>
+		<p><font size="+2">A stored procedure or in simple a proc is a named PL/SQL block which performs one or more specific task. This is similar to a procedure in other programming languages.
+<br><br>
+A procedure has a header and a body. The header consists of the name of the procedure and the parameters or variables passed to the procedure. The body consists or declaration section, execution section and exception section similar to a general PL/SQL Block.
+<br><br>
+A procedure is similar to an anonymous PL/SQL Block but it is named for repeated usage.
+		</font></p>
+		<h2>Procedures: Passing Parameters</h2>
+		<p><font size="+2">We can pass parameters to procedures in three ways.
+<br>
+1) IN-parameters
+<br>
+2) OUT-parameters
+<br>
+3) IN OUT-parameters
+<br><br>
+A procedure may or may not return any value.
+		<h2>General Syntax to create a procedure is:</h2>
+		<i>CREATE [OR REPLACE] PROCEDURE proc_name [list of parameters] 
+<br><br>
+IS    
+<br><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Declaration section 
+<br><br>
+BEGIN
+<br><br>    
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Execution section 
+<br><br>
+EXCEPTION    
+<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exception section 
+<br><br>
+END;</i>
+		</font></p>
+	<p><font size="+2"><b>IS -</b> marks the beginning of the body of the procedure and is similar to DECLARE in anonymous PL/SQL Blocks. The code between IS and BEGIN forms the Declaration section.
+<br><br>
+The syntax within the brackets [ ] indicate they are optional. By using CREATE OR REPLACE together the procedure is created if no other procedure with the same name exists or the existing procedure is replaced with the current code.
+	</font></p>
+	<h2>Procedures: Example</h2>
+	<p><font size="+2">The below example creates a procedure ‘employer_details’ which gives the details of the employee.
+<br><br><i>
+1> CREATE OR REPLACE PROCEDURE employer_details
+<br><br>
+2> IS 
+<br><br>
+3>  CURSOR emp_cur IS
+<br><br> 
+4>  SELECT first_name, last_name, salary FROM emp_tbl;
+<br><br>
+5>  emp_rec emp_cur%rowtype;
+<br><br>
+6> BEGIN
+<br><br> 
+7>  FOR emp_rec in sales_cur 
+<br><br>
+8>  LOOP 
+<br><br>
+9>  dbms_output.put_line(emp_cur.first_name || ' ' ||emp_cur.last_name
+<br><br>
+10>    || ' ' ||emp_cur.salary);
+<br><br>
+11> END LOOP;
+<br><br>
+12>END;
+13> /</i>
+</font></p>
+	<h2>How to execute a Stored Procedure?</h2>
+	<p><font size="+2">There are two ways to execute a procedure.
+<br><br>
+1) From the SQL prompt.
+<br><br>
+ &nbsp;&nbsp;&nbsp;<i>EXECUTE [or EXEC] procedure_name;</i> 
+<br><br>
+2) Within another procedure – simply use the procedure name.
+<br><br>
+ &nbsp;&nbsp;&nbsp;<i> procedure_name;</i>
+<br><br>
+<b>NOTE:</b> In the examples given above, we are using backward slash ‘/’ at the end of the program. This indicates the oracle engine that the PL/SQL program has ended and it can begin processing the statements</font></p>
+	<h2>IN & OUT Mode Example 1</h2>
+	<p><font size="+2">This program finds the minimum of two values. Here, the procedure takes two numbers using the IN mode and returns their minimum using the OUT parameters.</font></p>
+	<div class="a"><font size="+2"><p>DECLARE 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;   a number; 
+<br>  
+&nbsp;&nbsp;&nbsp;&nbsp; b number; 
+<br>   
+&nbsp;&nbsp;&nbsp;&nbsp; c number;
+<br>
+PROCEDURE findMin(x IN number, y IN number, z OUT number) IS 
+<br>
+BEGIN 
+<br>   
+&nbsp;&nbsp;&nbsp;&nbsp;IF x < y THEN 
+<br>    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  z:= x; 
+<br>   
+&nbsp;&nbsp;&nbsp;&nbsp;ELSE 
+<br>   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  z:= y; 
+<br>   
+&nbsp;&nbsp;&nbsp;&nbsp;END IF; 
+<br>
+END;   
+<br>
+BEGIN 
+<br>   
+&nbsp;&nbsp;&nbsp;&nbsp;a:= 23; 
+<br>   
+&nbsp;&nbsp;&nbsp;&nbsp;b:= 45; 
+<br>   
+&nbsp;&nbsp;&nbsp;&nbsp;findMin(a, b, c); 
+<br>   
+&nbsp;&nbsp;&nbsp;&nbsp;dbms_output.put_line(' Minimum of (23, 45) : ' || c); 
+<br>
+END; 
+<br>
+/
+
+</font></div>
+<p><font size="+2">When the above code is executed at the SQL prompt, it produces the following result -</font></p>
+	<div class="a"><font size="+2">Minimum of (23, 45) : 23   
+<br><br>
+PL/SQL procedure successfully completed.
+</font></div>
+	<h2>IN & OUT Mode Example 2</h2>
+	<p><font size="+2">This procedure computes the square of value of a passed value. This example shows how we can use the same parameter to accept a value and then return another result.</font></p>
+	<div class="a"><font size="+2">
+		DECLARE 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a number; 
+<br>
+PROCEDURE squareNum(x IN OUT number) IS 
+<br>
+BEGIN 
+<br>  
+&nbsp;&nbsp;&nbsp;&nbsp;x := x * x; 
+<br>
+END;  
+<br>
+BEGIN 
+<br>   
+&nbsp;&nbsp;&nbsp;&nbsp;a:= 23; 
+<br>   
+&nbsp;&nbsp;&nbsp;&nbsp;squareNum(a); 
+<br>   
+&nbsp;&nbsp;&nbsp;&nbsp;dbms_output.put_line(' Square of (23): ' || a); 
+<br>
+END; 
+<br>
+/
+</font></div>
+	<p><font size="+2">When the above code is executed at the SQL prompt, it produces the following result -</font></p>
+    		<div class="a"><font size="+2">Square of (23): 529 
+<br><br>
+PL/SQL procedure successfully completed.</font></div>   
+<h1>PL/SQL Function</h1>
+<p><font size="+2">The PL/SQL Function is very similar to PL/SQL Procedure. The main difference between procedure and a function is, a function must always return a value, and on the other hand a procedure may or may not return a value. Except this, all the other things of PL/SQL procedure are true for PL/SQL function too.</font></p>
+<p><b><h2>Syntax to create a function:</h2></b></p>
+<div class="a"><p><font size="+2">CREATE [OR REPLACE] FUNCTION function_name [parameters] 
+<br><br> 
+[(parameter_name [IN | OUT | IN OUT] type [, ...])]  
+<br><br>
+RETURN return_datatype  
+<br><br>
+{IS | AS}
+<br><br>  
+BEGIN  
+<br><br>
+   < function_body >  
+<br><br>
+END [function_name]; </font> </p></div>
+<p><font size="+2"><b>Here:</b>
+<br><br>
+<b>Function_name:</b> specifies the name of the function.
+<br><br>
+<b>[OR REPLACE]</b> option allows modifying an existing function.
+<br><br>
+The <b>optional parameter list</b> contains name, mode and types of the parameters.
+<br><br>
+<b>IN</b> represents that value will be passed from outside and OUT represents that this parameter will be used to return a value outside of the procedure.</font></p>
+<p><font size="+2"><b>The function must contain a return statement.</b>
+<br><br>
+RETURN clause specifies that data type you are going to return from the function.
+<br><br>
+Function_body contains the executable part.
+<br><br>
+The AS keyword is used instead of the IS keyword for creating a standalone function.</font></p>
+<h1>PL/SQL Function Example</h1>
+<p><font size="+2">Let's see a simple example to <b>create a function.</b></font></p>
+<div class="a"><p><font size="+2">create or replace function adder(n1 in number, n2 in number)    
+<br><br>
+return number    
+<br><br>
+is   
+<br><br>  
+n3 number(8);
+<br><br>    
+begin    
+<br><br>
+n3 :=n1+n2;    
+<br><br>
+return n3;    
+<br><br>
+end;    
+<br><br>
+/  
+</font></p></div>
+<h2>Calling PL/SQL Function:</h2>
+<p><font size="+2">
+While creating a function, you have to give a definition of what the function has to do. To use a function, you will have to call that function to perform the defined task. Once the function is called, the program control is transferred to the called function.
+<br><br>
+After the successful completion of the defined task, the call function returns program control back to the main program.
+<br><br>
+To call a function you have to pass the required parameters along with function name and if function returns a value then you can store returned value. Following program calls the function totalCustomers from an anonymous block:</font></p>
+<div class="a"><font size="+2"><p>DECLARE 
+<br><br> 
+   c number(2);
+<br><br>  
+BEGIN  
+<br><br>
+   c := totalCustomers();  
+<br><br>
+   dbms_output.put_line('Total no. of Customers: ' || c);  
+<br><br>
+END;  
+<br><br>
+/  </p></font></div>
+<h1>PL/SQL Drop Function</h1>
+<p><font size="+2">
+Syntax for removing your created function:
+<br><br>
+If you want to remove your created function from the database, you should use the following syntax.
+</font></p>
+<div class="a"><font size="+2"><p>DROP FUNCTION function_name;</p></font></div>  
+</body>
+</html>
